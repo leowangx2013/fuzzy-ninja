@@ -33,4 +33,12 @@
   .h3 = '截止日期 :'
   .alert.alert-danger id="time"
     = @mission.deadline
+  .alert
   .h3 = '留言 :'
+  - @supervision.comments.each do |comment|
+    = User.find_by_id(comment.user_id)
+    span = comment.content
+  = render 'form_conversation'
+
+
+

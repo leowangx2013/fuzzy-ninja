@@ -3,7 +3,7 @@
   td
     .mission
       .h4
-        = link_to(supervision.mission.target)
+        = link_to(supervision.mission.target, mission_supervision_path(supervision.mission, supervision))
   td
     .h5
       = supervision.mission.description
