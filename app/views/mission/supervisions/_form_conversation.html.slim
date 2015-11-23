@@ -1,3 +1,5 @@
-= simple_form_for :conversation_content do |f|
+= simple_form_for :comment, url: mission_comments_path do |f|
   = f.input :content, label: "请输入内容"
+  = f.hidden_field :commentable_type, value: "conversation"
+  = f.hidden_field :commentable_id, value: @supervision
   = f.submit "留言"
