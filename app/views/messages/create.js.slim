@@ -1,0 +1,7 @@
+= publish_to "/messages/new" do
+  | $('#chat').append('
+  = current_user.name + ": "
+  = @message.content
+  | <br>
+  | ');
+  | $("#new_message")[0].reset();

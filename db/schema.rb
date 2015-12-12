@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 20151028125334) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.integer  "user_id",          null: false, index: {name: "fk__conversations_user_id"}, foreign_key: {references: "users", name: "fk_conversations_user_id", on_update: :no_action, on_delete: :no_action}
+    t.integer  "conversable_id",   null: false
+    t.string   "conversable_type", null: false, index: {name: "fk__conversations_conversable_id", with: ["conversable_id"]}
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
   create_table "friendships", force: :cascade do |t|
     t.integer  "user_id",    null: false, index: {name: "fk__friendships_user_id"}, foreign_key: {references: "users", name: "fk_friendships_user_id", on_update: :no_action, on_delete: :no_action}
     t.integer  "accepted",   default: 0, null: false
