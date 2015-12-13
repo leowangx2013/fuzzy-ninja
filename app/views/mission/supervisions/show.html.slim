@@ -36,9 +36,10 @@
   .alert
   .h3 = '留言 :'
   - @supervision.comments.each do |comment|
-    = User.find_by_id(comment.user_id)
+    = User.find_by_id(comment.user_id).name + ": "
     span = comment.content
-  = render 'form_conversation'
+    br
+  = render 'form_comments'
 
 
 

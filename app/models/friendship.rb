@@ -5,7 +5,7 @@ class Friendship < ActiveRecord::Base
 
   belongs_to :user, inverse_of: :friendships
   belongs_to :friend, class_name: User.name, inverse_of: :friendships
-
+  has_one :conversation, as: :conversable, dependent: :destroy, inverse_of: nil
   private
 
   def check_id_different

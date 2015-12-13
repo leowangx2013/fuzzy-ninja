@@ -5,4 +5,5 @@ class Mission::Supervision < ActiveRecord::Base
   belongs_to :mission, inverse_of: :supervisions
   belongs_to :supervisor, class_name: User.name, inverse_of: :supervisions
   has_many :comments, as: :commentable, dependent: :destroy, inverse_of: nil
+  has_one :conversation, as: :conversatable, dependent: :destroy, inverse_of: nil
 end
