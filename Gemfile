@@ -88,4 +88,8 @@ group :development, :test do
 
   # Prevent N+1 queries.
   gem 'bullet'
+
+  # For Faye
+  gem 'private_pub'
+  gem 'thin'
 end

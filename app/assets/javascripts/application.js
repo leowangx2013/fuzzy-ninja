@@ -18,3 +18,4 @@
 //= require bootstrap-datetimepicker
 //= require simple_form-bootstrap
 //= require_tree .
+//= require private_pub
